@@ -4,6 +4,7 @@ import com.GureevM.lab_12.MyExeptions.DuplicateModelNameException;
 import com.GureevM.lab_12.MyExeptions.ModelPriceOutOfBoundsException;
 import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
 import com.GureevM.lab_13.Prototype;
+import com.GureevM.lab_32.Command;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -11,10 +12,11 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
-public class Car implements Transport, Prototype,Serializable{
+public class Car implements Transport, Prototype, Serializable {
 
     private String carMark;
     private Model[] models;
+    private Command command;
 
     public Car(String markName, int arraySize) {
         try {
@@ -25,8 +27,28 @@ public class Car implements Transport, Prototype,Serializable{
         }
     }
 
-    public void print(){
+    // установка текущей команды (паттерн команд)
+    public void setPrintCommand(Command command) {
+        this.command = command;
+    }
 
+    //метод для печати (паттерн команд)
+    public void print(FileWriter writer) {
+        if (command.printToTXTFile(this, writer)) {
+            System.out.println("Печать в файл выполнена!");
+        } else {
+            System.out.println("Печать в файл не выполнена!");
+        }
+    }
+
+    // метод печати в строку (паттерн итератор)
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carMark='" + carMark + '\'' +
+                ", models=" + Arrays.toString(models) +
+                ", command=" + command +
+                '}';
     }
 
     //метод для задания длины и заполнения
@@ -64,12 +86,12 @@ public class Car implements Transport, Prototype,Serializable{
     public void editPriceByModelName(String name, double newPrice) throws NoSuchModelNameException {
         for (int a = 0; a < models.length; a++) {
 
-            if (newPrice <0) {
+            if (newPrice < 0) {
                 String err = String.format("Новая цена меньше 0!", name);
                 throw new ModelPriceOutOfBoundsException(err);
             }
 
-            if (models[a].name.equals(name) ) {
+            if (models[a].name.equals(name)) {
                 models[a].price = newPrice;
                 System.out.println(getMark() + " " + name + " цена измнена на " + newPrice);
                 break;
@@ -106,7 +128,7 @@ public class Car implements Transport, Prototype,Serializable{
     //метод добавления названия модели и её цены (путем создания
     //нового массива Моделей), использовать метод Arrays.copyOf(),
     public void addNewModel(String name, double price) throws DuplicateModelNameException {
-       // Model[] copyModels = new Model[models.length + 1];
+        // Model[] copyModels = new Model[models.length + 1];
 
         for (int a = 0; a < models.length; a++) {
             if (models[a] != null && models[a].name.equals(name)) {
@@ -176,11 +198,11 @@ public class Car implements Transport, Prototype,Serializable{
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Car result = (Car)super.clone();
+        Car result = (Car) super.clone();
         result.models = models.clone();
-       for (int a = 0; a < models.length; a++) {
-           result.models[a] = new Model(models[a].name,models[a].price);
-       }
+        for (int a = 0; a < models.length; a++) {
+            result.models[a] = new Model(models[a].name, models[a].price);
+        }
 //            result.models[a].name = models[a].name;
 //            result.models[a].price = models[a].price;
 //        }
@@ -219,7 +241,7 @@ public class Car implements Transport, Prototype,Serializable{
         return result;
     }
 
-    public class Model implements Serializable{
+    static class Model implements Serializable {
 
         String name;
         double price;

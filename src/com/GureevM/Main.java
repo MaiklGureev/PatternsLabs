@@ -9,10 +9,11 @@ import com.GureevM.lab_21.Adapter;
 import com.GureevM.lab_21.AdapterRelease;
 import com.GureevM.lab_22.TransportDecorator;
 import com.GureevM.lab_31.ChainOfResponsibility;
-import com.GureevM.lab_31.PrinterInLine;
-import com.GureevM.lab_31.PrinterToColumn;
+import com.GureevM.lab_32.Command;
+import com.GureevM.lab_32.PrinterInLine;
+import com.GureevM.lab_32.PrinterToColumn;
 
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -26,6 +27,16 @@ public class Main {
 //        chainOfResponsibility.printToTXTFile(transport);
 
         //Разработка приложения с использованием паттерна Command
+//        Car transport = new Car("DefMark",10);
+//        //Command command = new PrinterInLine();
+//        Command command = new PrinterToColumn();
+//        transport.setPrintCommand(command);
+//        try {
+//            FileWriter writer = new FileWriter("src/com/GureevM/lab_32/out.txt");
+//            transport.print(writer);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }
