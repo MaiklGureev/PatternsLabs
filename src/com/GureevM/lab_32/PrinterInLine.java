@@ -6,8 +6,9 @@ import com.GureevM.lab_31.ChainOfResponsibility;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.Serializable;
 
-public class PrinterInLine implements Command {
+public class PrinterInLine implements Command, Serializable {
 
 
     @Override

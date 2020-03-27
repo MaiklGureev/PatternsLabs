@@ -5,23 +5,32 @@ import com.GureevM.lab_12.MyExeptions.ModelPriceOutOfBoundsException;
 import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
 import com.GureevM.lab_13.Prototype;
 import com.GureevM.lab_32.Command;
+import com.GureevM.lab_32.PrinterToColumn;
+import com.GureevM.lab_33.Memento;
 
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
+import java.util.Iterator;
 
 public class Car implements Transport, Prototype, Serializable {
 
     private String carMark;
     private Model[] models;
     private Command command;
+    private AutoIterator autoIterator;
+    private Memento memento;
 
     public Car(String markName, int arraySize) {
         try {
+            autoIterator = new AutoIterator();
+            command = new PrinterToColumn();
+            memento =  new Memento();
             setMark(markName);
             setArraySize(arraySize, 50);
+
         } catch (DuplicateModelNameException e) {
             e.printStackTrace();
         }
@@ -41,14 +50,19 @@ public class Car implements Transport, Prototype, Serializable {
         }
     }
 
-    // метод печати в строку (паттерн итератор)
-    @Override
-    public String toString() {
-        return "Car{" +
-                "carMark='" + carMark + '\'' +
-                ", models=" + Arrays.toString(models) +
-                ", command=" + command +
-                '}';
+    //метод возврашающий экземпляр автоитератора (паттерн итератор)
+    public AutoIterator iterator() {
+        return new AutoIterator();
+    }
+
+    //метод делающий снимок текущей машины (паттерн мементо)
+    public void createMemento(Car car){
+            memento.setAuto(car);
+    }
+
+    //метод возврашающий экземпляр машины из снимка (паттерн мементо)
+    public Car getMemento(){
+        return memento.getCar();
     }
 
     //метод для задания длины и заполнения
@@ -127,13 +141,17 @@ public class Car implements Transport, Prototype, Serializable {
 
     //метод добавления названия модели и её цены (путем создания
     //нового массива Моделей), использовать метод Arrays.copyOf(),
-    public void addNewModel(String name, double price) throws DuplicateModelNameException {
+    public void addNewModel(String name, double price)  {
         // Model[] copyModels = new Model[models.length + 1];
 
         for (int a = 0; a < models.length; a++) {
             if (models[a] != null && models[a].name.equals(name)) {
                 String err = String.format("Модель {0} уже есть! Добавление не выполнено!", name);
-                throw new DuplicateModelNameException(err);
+                try {
+                    throw new DuplicateModelNameException(err);
+                } catch (DuplicateModelNameException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -251,6 +269,38 @@ public class Car implements Transport, Prototype, Serializable {
             this.price = price;
         }
 
+        // метод печати в строку (паттерн итератор)
+        @Override
+        public String toString() {
+            return "Model " + "name = " + name + ", price = " + price;
+        }
+
     }
+
+    public class AutoIterator implements Iterator, Serializable {
+
+        int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            if (getArrayModelLength() > index)
+                return true;
+            else
+                return false;
+        }
+
+        @Override
+        public Object next() {
+            if (hasNext()) {
+                return models[index++];
+            }
+            else {
+                index = 0;
+            }
+            return null;
+        }
+
+    }
+
 
 }
