@@ -4,6 +4,7 @@ import com.GureevM.lab_12.MyExeptions.DuplicateModelNameException;
 import com.GureevM.lab_12.MyExeptions.ModelPriceOutOfBoundsException;
 import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
 import com.GureevM.lab_12.Transport;
+import com.GureevM.lab_38.Visitor;
 
 public class TransportDecorator implements Transport {
 
@@ -11,6 +12,11 @@ public class TransportDecorator implements Transport {
 
     public TransportDecorator(Transport transport) {
         this.transport = transport;
+    }
+
+    @Override
+    public synchronized void accept(Visitor visitor) {
+        transport.accept(visitor);
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.GureevM.lab_13.Prototype;
 import com.GureevM.lab_32.Command;
 import com.GureevM.lab_32.PrinterToColumn;
 import com.GureevM.lab_33.Memento;
+import com.GureevM.lab_38.Visitor;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -34,6 +35,11 @@ public class Car implements Transport, Prototype, Serializable {
         } catch (DuplicateModelNameException e) {
             e.printStackTrace();
         }
+    }
+
+    // (паттерн визитор)
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
     // установка текущей команды (паттерн команд)

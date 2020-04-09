@@ -4,6 +4,7 @@ import com.GureevM.lab_12.MyExeptions.DuplicateModelNameException;
 import com.GureevM.lab_12.MyExeptions.ModelPriceOutOfBoundsException;
 import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
 import com.GureevM.lab_13.Prototype;
+import com.GureevM.lab_38.Visitor;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -29,6 +30,7 @@ public class Motorcycle implements Transport, Prototype {
         }
     }
 
+
     //метод для задания длины и заполнения
     public void setArraySize(int arraySize, double mediumPrice) throws DuplicateModelNameException {
         for (int a = 0; a < arraySize; a++) {
@@ -36,6 +38,11 @@ public class Motorcycle implements Transport, Prototype {
             double price = mediumPrice + new Random().nextInt((int) mediumPrice / 2);
             addNewModel(name, price);
         }
+    }
+
+    // (паттерн визитор)
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
     public String getMark() {

@@ -13,6 +13,8 @@ import com.GureevM.lab_32.Command;
 import com.GureevM.lab_32.PrinterInLine;
 import com.GureevM.lab_32.PrinterToColumn;
 import com.GureevM.lab_33.Memento;
+import com.GureevM.lab_38.PrintVisitor;
+import com.GureevM.lab_38.Visitor;
 
 import java.awt.dnd.Autoscroll;
 import java.io.*;
@@ -64,8 +66,10 @@ public class Main {
 //        System.out.println(transport.getMark());
 //        System.out.println(Arrays.toString(transport.getArrayOfModelNames()));
 
-
-
+        //Разработка приложения с использованием паттерна Visitor
+//        Visitor visitor = new PrintVisitor();
+//        Transport transport = new Motorcycle("DefMark",3);
+//        transport.accept(visitor);
 
     }
 

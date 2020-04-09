@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8464527-6c52-4cec-bbd5-b1747fb5334d" name="Default Changelist" comment="" />
+    <list default="true" id="c8464527-6c52-4cec-bbd5-b1747fb5334d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/GureevM/lab_38/PrintVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/GureevM/lab_38/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PatternsLabs/com/GureevM/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PatternsLabs/com/GureevM/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PatternsLabs/com/GureevM/OldMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PatternsLabs/com/GureevM/OldMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PatternsLabs/com/GureevM/lab_22/TransportDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PatternsLabs/com/GureevM/lab_22/TransportDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GureevM/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GureevM/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GureevM/lab_12/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GureevM/lab_12/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GureevM/lab_12/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GureevM/lab_12/Motorcycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GureevM/lab_12/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GureevM/lab_12/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GureevM/lab_22/TransportDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GureevM/lab_22/TransportDecorator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XehYobO9BmpE0sJODLNlifYFux" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -88,6 +104,8 @@
       <workItem from="1584973267670" duration="5311000" />
       <workItem from="1585297367537" duration="129000" />
       <workItem from="1585297815466" duration="7419000" />
+      <workItem from="1586249172348" duration="761000" />
+      <workItem from="1586447998259" duration="1890000" />
     </task>
     <servers />
   </component>
@@ -99,14 +117,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="25" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1584978384294" />
-    <state x="146" y="65" width="452" height="586" key="#com.intellij.ide.util.MemberChooser" timestamp="1585302760719">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="146" y="66" width="380" height="572" key="#com.intellij.ide.util.MemberChooser" timestamp="1586449262178">
+      <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="146" y="65" width="452" height="586" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585302760719" />
-    <state x="534" y="255" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583822716821">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="146" y="66" width="380" height="572" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1586449262178" />
+    <state x="534" y="257" width="299" height="213" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586249204999">
+      <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="534" y="255" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1583822716821" />
+    <state x="534" y="257" width="299" height="213" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.735@0.0.1366.735" timestamp="1586249204999" />
     <state x="363" y="94" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583942340601">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -119,6 +139,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583334112622" />
+    <state x="284" y="0" width="794" height="732" key="CommitChangelistDialog2" timestamp="1586449980397">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="284" y="0" width="794" height="732" key="CommitChangelistDialog2/0.0.1366.735@0.0.1366.735" timestamp="1586449980397" />
     <state width="412" height="438" key="DebuggerActiveHint" timestamp="1585307491600">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -127,22 +151,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="96" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585298082992" />
-    <state width="1323" height="276" key="GridCell.Tab.0.bottom" timestamp="1585308298884">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="176" key="GridCell.Tab.0.bottom" timestamp="1586450012866">
+      <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state width="1323" height="276" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585308298884" />
-    <state width="1323" height="276" key="GridCell.Tab.0.center" timestamp="1585308298884">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="176" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1586450012866" />
+    <state width="1324" height="176" key="GridCell.Tab.0.center" timestamp="1586450012865">
+      <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state width="1323" height="276" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585308298884" />
-    <state width="1323" height="276" key="GridCell.Tab.0.left" timestamp="1585308298884">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="176" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1586450012865" />
+    <state width="1324" height="176" key="GridCell.Tab.0.left" timestamp="1586450012864">
+      <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state width="1323" height="276" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585308298884" />
-    <state width="1323" height="276" key="GridCell.Tab.0.right" timestamp="1585308298884">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="176" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1586450012864" />
+    <state width="1324" height="176" key="GridCell.Tab.0.right" timestamp="1586450012865">
+      <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state width="1323" height="276" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585308298884" />
+    <state width="1324" height="176" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1586450012865" />
     <state width="1323" height="276" key="GridCell.Tab.1.bottom" timestamp="1585308298900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -186,18 +214,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/GureevM/lab_12/Motorcycle.java</url>
-          <line>187</line>
+          <line>194</line>
           <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/GureevM/Main.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/GureevM/Main.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
