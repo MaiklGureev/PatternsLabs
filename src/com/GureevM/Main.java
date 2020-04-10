@@ -1,40 +1,33 @@
 package com.GureevM;
 
-import com.GureevM.lab_11.Singleton;
 import com.GureevM.lab_12.*;
-import com.GureevM.lab_12.MyExeptions.DuplicateModelNameException;
-import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
-import com.GureevM.lab_13.Prototype;
-import com.GureevM.lab_21.Adapter;
-import com.GureevM.lab_21.AdapterRelease;
-import com.GureevM.lab_22.TransportDecorator;
 import com.GureevM.lab_31.ChainOfResponsibility;
+import com.GureevM.lab_31.PrinterInLine_COR;
+import com.GureevM.lab_31.PrinterToColumn_COR;
 import com.GureevM.lab_32.Command;
 import com.GureevM.lab_32.PrinterInLine;
 import com.GureevM.lab_32.PrinterToColumn;
-import com.GureevM.lab_33.Memento;
 import com.GureevM.lab_38.PrintVisitor;
 import com.GureevM.lab_38.Visitor;
 
-import java.awt.dnd.Autoscroll;
-import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.Properties;
 
 public class Main {
 
     public static void main(String[] args)  {
 
         //Разработка приложения с использованием паттерна Chain of Responsibility
-//        Transport transport = new Motorcycle("DefMark",10);
-//        ChainOfResponsibility chainOfResponsibility =  new PrinterInLine();
-//        chainOfResponsibility.setNextInChain(new PrinterToColumn());
+//        Transport transport = new Car("DefMark",30);
+//        ChainOfResponsibility chainOfResponsibility =  new PrinterInLine_COR();
+//        chainOfResponsibility.setNextInChain(new PrinterToColumn_COR());
 //        chainOfResponsibility.printToTXTFile(transport);
 
         //Разработка приложения с использованием паттерна Command
 //        Car transport = new Car("DefMark",10);
-//        //Command command = new PrinterInLine();
-//        Command command = new PrinterToColumn();
+//        Command command = new PrinterInLine();
+//        //Command command = new PrinterToColumn();
 //        transport.setPrintCommand(command);
 //        try {
 //            FileWriter writer = new FileWriter("src/com/GureevM/lab_32/out.txt");

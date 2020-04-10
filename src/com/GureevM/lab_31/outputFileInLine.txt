@@ -1,2 +1,2 @@
 Mark: DefMark, count: 3 
-Model: motorcycle_2, price: 103; Model: motorcycle_1, price: 72; Model: motorcycle_0, price: 72
+Model: car_0, price: 69; Model: car_1, price: 72; Model: car_2, price: 60

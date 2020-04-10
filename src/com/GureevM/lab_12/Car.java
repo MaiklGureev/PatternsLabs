@@ -6,7 +6,6 @@ import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
 import com.GureevM.lab_13.Prototype;
 import com.GureevM.lab_32.Command;
 import com.GureevM.lab_32.PrinterToColumn;
-import com.GureevM.lab_33.Memento;
 import com.GureevM.lab_38.Visitor;
 
 import java.io.*;
@@ -227,24 +226,6 @@ public class Car implements Transport, Prototype, Serializable {
         for (int a = 0; a < models.length; a++) {
             result.models[a] = new Model(models[a].name, models[a].price);
         }
-//            result.models[a].name = models[a].name;
-//            result.models[a].price = models[a].price;
-//        }
-//        Car result = null;
-//        try {
-//            ByteArrayOutputStream writeBuffer = new ByteArrayOutputStream();
-//            ObjectOutputStream outputStream  = new ObjectOutputStream(writeBuffer);
-//            outputStream.writeObject(super.clone());
-//            outputStream.close();
-//            byte[] buffer = writeBuffer.toByteArray();
-//            ByteArrayInputStream readBuffer = new ByteArrayInputStream(buffer);
-//            ObjectInputStream inputStream = new ObjectInputStream(readBuffer);
-//            result = (Car)inputStream.readObject();
-//        } catch (IOException | ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-
-
         return result;
     }
 
@@ -308,5 +289,28 @@ public class Car implements Transport, Prototype, Serializable {
 
     }
 
+    public static class Memento implements  Serializable{
+
+        Car car;
+
+        public void setAuto(Car car){
+            try {
+                ByteArrayOutputStream writeBuffer = new ByteArrayOutputStream();
+                ObjectOutputStream outputStream  = new ObjectOutputStream(writeBuffer);
+                outputStream.writeObject(car);
+                outputStream.close();
+                byte[] buffer = writeBuffer.toByteArray();
+                ByteArrayInputStream readBuffer = new ByteArrayInputStream(buffer);
+                ObjectInputStream inputStream = new ObjectInputStream(readBuffer);
+                this.car = (Car)inputStream.readObject();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public Car getCar() {
+            return car;
+        }
+    }
 
 }
