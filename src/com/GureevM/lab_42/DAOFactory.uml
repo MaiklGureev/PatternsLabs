@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.GureevM.lab_42.DAOFactory</OriginalElement>
+  <nodes>
+    <node x="186.0" y="151.0">com.GureevM.lab_42.TxtFile</node>
+    <node x="252.0" y="495.0">com.GureevM.lab_42.TxtTypeDAOFactory</node>
+    <node x="144.0" y="390.0">com.GureevM.lab_42.DAOFactory</node>
+    <node x="0.0" y="495.0">com.GureevM.lab_42.SerializeTypeDAOFactory</node>
+    <node x="0.0" y="185.5">com.GureevM.lab_42.SerializeFile</node>
+    <node x="93.0" y="0.0">com.GureevM.lab_42.OutputFile</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.GureevM.lab_42.SerializeTypeDAOFactory" target="com.GureevM.lab_42.DAOFactory">
+      <point x="0.0" y="-27.5" />
+      <point x="116.0" y="470.0" />
+      <point x="187.0" y="470.0" />
+      <point x="-43.0" y="27.5" />
+    </edge>
+    <edge source="com.GureevM.lab_42.SerializeFile" target="com.GureevM.lab_42.OutputFile">
+      <point x="0.0" y="-62.5" />
+      <point x="83.0" y="126.0" />
+      <point x="134.5" y="126.0" />
+      <point x="-41.5" y="50.5" />
+    </edge>
+    <edge source="com.GureevM.lab_42.TxtFile" target="com.GureevM.lab_42.OutputFile">
+      <point x="0.0" y="-97.0" />
+      <point x="269.0" y="126.0" />
+      <point x="217.5" y="126.0" />
+      <point x="41.5" y="50.5" />
+    </edge>
+    <edge source="com.GureevM.lab_42.TxtTypeDAOFactory" target="com.GureevM.lab_42.DAOFactory">
+      <point x="0.0" y="-27.5" />
+      <point x="344.0" y="470.0" />
+      <point x="273.0" y="470.0" />
+      <point x="43.0" y="27.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="218.0" y="275.0" />
+  <SelectedNodes>
+    <node>com.GureevM.lab_42.OutputFile</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

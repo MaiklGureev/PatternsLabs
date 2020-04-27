@@ -9,6 +9,10 @@ import com.GureevM.lab_32.PrinterInLine;
 import com.GureevM.lab_32.PrinterToColumn;
 import com.GureevM.lab_38.PrintVisitor;
 import com.GureevM.lab_38.Visitor;
+import com.GureevM.lab_42.DAOFactory;
+import com.GureevM.lab_42.OutputFile;
+import com.GureevM.lab_42.SerializeTypeDAOFactory;
+import com.GureevM.lab_42.TxtTypeDAOFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -63,6 +67,13 @@ public class Main {
 //        Visitor visitor = new PrintVisitor();
 //        Transport transport = new Motorcycle("DefMark",3);
 //        transport.accept(visitor);
+
+        //Разработка приложения с использованием паттерна DAO
+        DAOFactory factory = new SerializeTypeDAOFactory();
+        OutputFile file = factory.createFile();
+        file.write(new Motorcycle("Lada",10));
+        file.read();
+        file.showInfo();
 
     }
 

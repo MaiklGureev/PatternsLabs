@@ -6,11 +6,12 @@ import com.GureevM.lab_12.MyExeptions.NoSuchModelNameException;
 import com.GureevM.lab_13.Prototype;
 import com.GureevM.lab_38.Visitor;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
-public class Motorcycle implements Transport, Prototype {
+public class Motorcycle implements Transport, Prototype, Serializable {
 
     private String motorcycleMark;
     private Model head = new Model();
@@ -240,7 +241,7 @@ public class Motorcycle implements Transport, Prototype {
         return Objects.hash(motorcycleMark, head, size);
     }
 
-    private class Model {
+    private class Model implements Serializable{
         String name = null;
         double price = Double.NaN;
         Model prev = null;
